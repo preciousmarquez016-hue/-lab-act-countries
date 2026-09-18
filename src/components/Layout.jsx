@@ -1,7 +1,9 @@
 // NOTE: The nav below uses <a href="…"> which triggers full page reloads.
 // Lab 07 asks you to install react-router and replace these with <Link>.
 
-import { NavLink, Outlet}from "react-router";
+import { NavLink, Outlet } from "react-router";
+
+
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -12,27 +14,27 @@ const Layout = () => {
         </div>
 
         <div className="flex gap-5">
-          <NavLink to="/"end>
-          {({isActive}) => (
-            <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}> 
-            Home
+          <NavLink to="/" end>
+            {({ isActive }) => (
+              <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
+                Home
 
 
-            </p>
+              </p>
 
-          )}
-            
+            )}
+
           </NavLink>
           <NavLink to="/countries">
-          {({isActive}) => (
-            <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
-              Countries
-            </p>
+            {({ isActive }) => (
+              <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
+                Countries
+              </p>
 
-          )}
+            )}
           </NavLink>
           <NavLink to="/bucket-list">
-            {({isActive}) => (
+            {({ isActive }) => (
               <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
                 bucket list
               </p>
@@ -40,7 +42,7 @@ const Layout = () => {
             )}
           </NavLink>
           <NavLink to="/about">
-            {({isActive}) => (
+            {({ isActive }) => (
               <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
                 about
               </p>
