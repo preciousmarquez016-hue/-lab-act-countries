@@ -1,7 +1,7 @@
 // NOTE: The nav below uses <a href="…"> which triggers full page reloads.
 // Lab 07 asks you to install react-router and replace these with <Link>.
 
-import {Link, Outlet}from "react-router";
+import { NavLink, Outlet}from "react-router";
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -12,21 +12,43 @@ const Layout = () => {
         </div>
 
         <div className="flex gap-5">
-          <Link to="/">
-            <p className="text-[12px]">Home</p>
-          </Link>
-          <Link to="/countries">
-            <p className="text-[12px]">Countries</p>
-          </Link >
-          <Link to="/bucket-list">
-            <p className="text-[12px]">Bucket List</p>
-          </Link>
-          <Link to="/about">
-            <p className="text-[12px]">About</p>
-          </Link>
+          <NavLink to="/"end>
+          {({isActive}) => (
+            <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}> 
+            Home
+
+
+            </p>
+
+          )}
+            
+          </NavLink>
+          <NavLink to="/countries">
+          {({isActive}) => (
+            <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
+              Countries
+            </p>
+
+          )}
+          </NavLink>
+          <NavLink to="/bucket-list">
+            {({isActive}) => (
+              <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
+                bucket list
+              </p>
+
+            )}
+          </NavLink>
+          <NavLink to="/about">
+            {({isActive}) => (
+              <p className={`text-[12px] ${isActive ? "font-bold text-blue-600" : ""}`}>
+                about
+              </p>
+            )}
+          </NavLink>
         </div>
       </nav>
-      <main className="flex-1 border-2 border-amber-400 p-3">
+      <main className="flex-1  p-6">
         <Outlet />
       </main>
     </div>
